@@ -58,12 +58,23 @@ public class Guerrero {
     
     
     public void atacar(Guerrero enemigo, int tiempo ){
+        System.out.println("-------------------------");
+        System.out.println(this.nombre);
         double ataque = this.estrategia.activar(this, tiempo);
-        System.out.println("ataque: "+ataque);
+        System.out.println("ataque: " +ataque);
         DecimalFormat df = new DecimalFormat("###.##");
         double danio = ataque * 4 - enemigo.escudo * 2;
+        danio = Math.abs(danio);
         danio = (danio * 20)/100;
-        enemigo.vida = Double.parseDouble(df.format(enemigo.vida - danio));
+        System.out.println(this.nombre +" reduce la vida de "+enemigo.nombre + " en: "+danio);
+        System.out.println("-------------------------");
+        if (enemigo.vida > 0){
+            enemigo.vida = Double.parseDouble(df.format(enemigo.vida - danio));
+        }
+        else{
+            enemigo.vida = 0;
+        }
+        
         //10 a 10 daño=4
         //10 a 1 daño=6
         //5 a 5 daño= 2

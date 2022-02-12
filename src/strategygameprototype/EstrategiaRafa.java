@@ -15,7 +15,7 @@ public class EstrategiaRafa implements Estrategia {
     private double vidaRestante;
     public EstrategiaRafa(int i) {
         this.rafaga = i;
-        this.vidaRestante = 10.0;
+        this.vidaRestante = 25.0;
         
     }
     
@@ -26,7 +26,7 @@ public class EstrategiaRafa implements Estrategia {
     @Override
     public double activar(Guerrero guerrero, int tiempo) {
         if(guerrero.getVida() <= this.vidaRestante){
-            guerrero.setEscudo(0);
+            guerrero.setEscudo(5);
             return guerrero.getAtaque() + this.rafaga;
         }
         else{

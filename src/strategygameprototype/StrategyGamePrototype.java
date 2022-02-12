@@ -17,14 +17,23 @@ public class StrategyGamePrototype {
         //escudo 1-10 
         //vida 0-100
         Estrategia dobleDanio = new EstrategiaDobleDanio(2);
-        Guerrero guerrero1 = new Guerrero("G", 50, 7, 10, dobleDanio);
-        
         Estrategia rafaga = new EstrategiaRafa(15); 
-        //Estrategia dobleDanio2 = new EstrategiaDobleDanio(3);
-        Guerrero enemigo1 = new Guerrero("E", 50, 6, 1, rafaga);
+        
+        //Guerreros
+        Guerrero lucho = new Guerrero("Lucho", 30, 6, 10, dobleDanio);
+        Guerrero beto = new Guerrero("Beto", 50, 8, 10, dobleDanio);
+        Guerrero coco = new Guerrero("Coco", 3, 6, 5, rafaga);
+        
+        //Monstruos
+        Estrategia dobleDanio2 = new EstrategiaDobleDanio(3);
+        Guerrero monstruo1 = new Guerrero("Monstruo1", 1, 10, 5, rafaga);
+        Guerrero monstruo2 = new Guerrero("Monstruo2", 50, 8, 4, dobleDanio);
+        Guerrero monstruo3 = new Guerrero("Monstruo3", 35, 10, 6, rafaga);
+        
+        
         
         Terreno terreno = new Terreno();
-        terreno.combate(guerrero1, enemigo1);
+        terreno.combate(lucho, monstruo2);
     }
     
 }

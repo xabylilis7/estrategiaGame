@@ -48,7 +48,7 @@ public class Terreno {
     }
 
     private void mostrarEstadisticas(Guerrero g1, Guerrero e1, int tiempo) {
-        System.out.println("Tiempo  GuerreroVida  GuerreroEscudo  |  EnemigoVida EnemigoEscudo");
+        System.out.println("Tiempo  "+g1.getNombre()+"-vida      "+    g1.getNombre()+ "-escudo     |"  +e1.getNombre()+ "-vida       "+   e1.getNombre()+ "escudo       ");
         System.out.print("T"+tiempo + ":          ");
         System.out.println(g1.getVida() + "           " + g1.getEscudo() + "         |       " + e1.getVida() + "         " + e1.getEscudo());
     }
