@@ -17,7 +17,9 @@ public class Terreno {
     public void combate(Guerrero g1, Guerrero e1) {
         Runnable runnable = () -> {
             // Esto se ejecuta en segundo plano una única vez
-            System.out.println("Inicio de la batalla");
+            System.out.println("***** Inicio de la batalla *****");
+            System.out.println("");
+            System.out.println("");
             int tiempo = 0;
             while (true) {
                 // Pero usamos un truco y hacemos un ciclo infinito
@@ -49,16 +51,25 @@ public class Terreno {
 
     private void mostrarEstadisticas(Guerrero g1, Guerrero e1, int tiempo) {
         System.out.println("Tiempo  "+g1.getNombre()+"-vida      "+    g1.getNombre()+ "-escudo     |"  +e1.getNombre()+ "-vida       "+   e1.getNombre()+ "escudo       ");
-        System.out.print("T"+tiempo + ":          ");
-        System.out.println(g1.getVida() + "           " + g1.getEscudo() + "         |       " + e1.getVida() + "         " + e1.getEscudo());
+        if (tiempo >= 10){
+            System.out.print("T"+tiempo + ":        ");
+        }
+        else{
+            System.out.print("T"+tiempo + ":          ");
+        }
+        System.out.println(g1.getVida() + "           " + g1.getEscudo() + "         |       " + e1.getVida() + "               " + e1.getEscudo());
+        System.out.println("");
+        System.out.println("");
     }
 
     public void mostrarGanador(Guerrero guerrero1, Guerrero enemigo1) {
+        System.out.println("");
+        System.out.println("");
         if(!guerrero1.estaVivo()){
-            System.out.println("Murio el buenito!");
+            System.out.println("***** Murio el guerrero! *****");
         }
         else{
-            System.out.println("Murio el enemigo!");
+            System.out.println("***** Murio el monstruo! *****");
         }
     }
 

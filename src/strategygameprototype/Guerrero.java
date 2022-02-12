@@ -74,14 +74,6 @@ public class Guerrero {
         else{
             enemigo.vida = 0;
         }
-        
-        //10 a 10 daño=4
-        //10 a 1 daño=6
-        //5 a 5 daño= 2
-        //1 a 10 daño=crece, entonces ataque siempre mayor a 5
-        //5 a 10 daño=0
-        //6 a 10 daño=0,8
-        //6 a 1 daño= 4,4
     }
     
     
